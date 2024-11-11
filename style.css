@@ -1,0 +1,21 @@
+.poll-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .poll-section label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .poll-section button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .poll-section button:hover {
+    background-color: #2980b9;
+  }

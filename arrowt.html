@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Produtos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Vendidos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Brahma</td>
+                <td>$35.00</td>
+                <td id="estoque1">100</td>
+                <td id="vendidos1">0</td>
+            </tr>
+            <tr>
+                <td>Amstel</td>
+                <td>$39.00</td>
+                <td id="estoque2">50</td>
+                <td id="vendidos2">0</td>
+            </tr>
+            <!-- Adicione mais produtos conforme necessário -->
+            <tr>
+                <td>Skol</td>
+                <td>$35.00</td>
+                <td id="estoque3">75</td>
+                <td id="vendidos3">0</td>
+            </tr>
+            <tr>
+                <td>Heineken</td>
+                <td>$57.00</td>
+                <td id="estoque4">60</td>
+                <td id="vendidos4">0</td>
+            </tr>
+            <tr>
+                <td>Budweiser</td>
+                <td>$46.00</td>
+                <td id="estoque5">25</td>
+                <td id="vendidos5">0</td>
+            </tr>
+            <tr>
+                <td>Puro Malte</td>
+                <td>$26.00</td>
+                <td id="estoque6">80</td>
+                <td id="vendidos6">0</td>
+            </tr>
+            <tr>
+                <td>Schin</td>
+                <td>$28.00</td>
+                <td id="estoque7">45</td>
+                <td id="vendidos7">0</td>
+            </tr>
+            <tr>
+                <td>Brahma DM</td>
+                <td>$38.00</td>
+                <td id="estoque8">90</td>
+                <td id="vendidos8">0</td>
+            </tr>
+            <tr>
+                <td>Spaten</td>
+                <td>$47.00</td>
+                <td id="estoque9">70</td>
+                <td id="vendidos9">0</td>
+            </tr>
+            <tr>
+                <td>Budweiser 0</td>
+                <td>$32.00</td>
+                <td id="estoque10">120</td>
+                <td id="vendidos10">0</td>
+            </tr>
+            <tr>
+                <td>Skol PM</td>
+                <td>$35.00</td>
+                <td id="estoque11">55</td>
+                <td id="vendidos11">0</td>
+            </tr>
+            <tr>
+                <td>Devassa</td>
+                <td>$32.00</td>
+                <td id="estoque12">85</td>
+                <td id="vendidos12">0</td>
+            </tr>
+            <tr>
+                <td>Heineken 0</td>
+                <td>$57.00</td>
+                <td id="estoque13">40</td>
+                <td id="vendidos13">0</td>
+            </tr>
+            <tr>
+                <td>Itaipava</td>
+                <td>$29.00</td>
+                <td id="estoque14">110</td>
+                <td id="vendidos14">0</td>
+            </tr>
+            <tr>
+                <td>Stella </td>
+                <td>$33.00</td>
+                <td id="estoque15">35</td>
+                <td id="vendidos15">0</td>
+
+            
+
+            </tr>
+
+
+
+            <tr>
+                <td>Heineken 600 </td>
+                <td>$10.00</td>
+                <td id="estoque15">35</td>
+                <td id="vendidos15">0</td>
+
+            
+
+            </tr>
+
+            <tr>
+                <td>Budweiser 600 </td>
+                <td>$7.00</td>
+                <td id="estoque15">35</td>
+                <td id="vendidos15">0</td>
+
+            
+
+            </tr>
+
+
+            <tr>
+                <td>Heineken 330 </td>
+                <td>$36.00</td>
+                <td id="estoque15">35</td>
+                <td id="vendidos15">0</td>
+
+            
+
+            </tr>
+
+        </tbody>
+    </table>
+    <p>Total do dia: $<span id="totalDia">0.00</span></p>
+    <button class="button" onclick="registrarVenda(1)">Registrar Venda Brahma</button>
+    <button class="button" onclick="registrarVenda(2)">Registrar Venda Amstel</button>
+    <button class="button" onclick="registrarVenda(3)">Registrar Venda Skol</button>
+    <button class="button" onclick="registrarVenda(4)">Registrar Venda Heineken</button>
+    <button class="button" onclick="registrarVenda(5)">Registrar Venda Budweiser</button>
+    <button class="button" onclick="registrarVenda(6)">Registrar Venda Puro Malte</button>
+    <button class="button" onclick="registrarVenda(7)">Registrar Venda Schin</button>
+    <button class="button" onclick="registrarVenda(8)">Registrar Venda Brahma DM</button>
+    <button class="button" onclick="registrarVenda(9)">Registrar Venda Spaten</button>
+    <button class="button" onclick="registrarVenda(10)">Registrar Venda Budweiser 0</button>
+    <button class="button" onclick="registrarVenda(11)">Registrar Venda Skol PM</button>
+    <button class="button" onclick="registrarVenda(12)">Registrar Venda Devassa</button>
+    <button class="button" onclick="registrarVenda(13)">Registrar Venda Heineken 0</button>
+    <button class="button" onclick="registrarVenda(14)">Registrar Venda Itaipava</button>
+    <button class="button" onclick="registrarVenda(15)">Registrar Venda Stella</button>
+    <button class="button" onclick="registrarVenda(16)">Registrar Venda Heineken 600</button>
+    
+
+    <!-- Adicione mais botões para outros produtos conforme necessário -->
+
+    <script>
+        function registrarVenda(produtoId) {
+            var estoqueElement = document.getElementById('estoque' + produtoId);
+            var vendidosElement = document.getElementById('vendidos' + produtoId);
+            var estoque = parseInt(estoqueElement.innerText);
+            var vendidos = parseInt(vendidosElement.innerText);
+
+            if (estoque > 0) {
+                estoque--;
+                vendidos++;
+                estoqueElement.innerText = estoque;
+                vendidosElement.innerText = vendidos;
+                atualizarTotalDia();
+            } else {
+                alert('Estoque esgotado para este produto.');
+            }
+        }
+
+        function atualizarTotalDia() {
+            var totalDia = 0.00;
+            
+            for (var i = 1; i <= 18; i++) {
+                var precoProduto = parseFloat(document.querySelector('#estoque' + i).previousElementSibling.innerText.replace('$', ''));
+                var vendidosProduto = parseInt(document.getElementById('vendidos' + i).innerText);
+                totalDia += precoProduto * vendidosProduto;
+            }
+
+            document.getElementById('totalDia').innerText = totalDia.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+
+

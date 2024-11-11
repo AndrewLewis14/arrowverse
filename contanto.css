@@ -1,0 +1,101 @@
+.news-section {
+  margin-top: 20px;
+}
+
+.news-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.news-link {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.news-link img {
+  width: 150px;
+  height: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-link p {
+  margin: 5px 0;
+}
+
+.news-link:hover img {
+  transform: scale(1.1);
+}
+
+.sports-section {
+  margin-top: 20px;
+}
+
+.sports-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sport-link {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.sport-link img {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sport-link:hover img {
+  transform: scale(1.1);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333; /* Cor de fundo da barra superior */
+  color: #fff; /* Cor do texto */
+  padding: 10px; /* Espaçamento interno da barra superior */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-info {
+  display: flex;
+  align-items: center;
+}
+
+.site-info img {
+  width: 50px; /* Ajuste conforme necessário */
+  height: 50px; /* Ajuste conforme necessário */
+  margin-right: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 50px; /* Ajuste para o mesmo tamanho do logo do site */
+  height: 50px; /* Ajuste para o mesmo tamanho do logo do site */
+  margin-left: 10px; /* Espaçamento entre os ícones */
+  background-size: cover;
+}
+
+.social-links a.tiktok {
+  background-color: #3498db; /* Cor específica para o TikTok, ajuste conforme necessário */
+}
+
+.social-links a.instagram {
+  background-color: #e4405f; /* Cor específica para o Instagram, ajuste conforme necessário */
+}
+
+.social-links a.twitter {
+  background-color: #1da1f2; /* Cor específica para o Twitter, ajuste conforme necessário */
+}
+
+.social-links a.youtube {
+  background-color: #c4302b; /* Cor específica para o YouTube, ajuste conforme necessário */
+}

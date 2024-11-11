@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Lançamento de Dados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #dice {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulador de Lançamento de Dados</h1>
+    <p>Clique no dado para lançá-lo:</p>
+    <div id="dice">?</div>
+
+    <script>
+        const dice = document.getElementById('dice');
+        const sides = 6;
+
+        dice.addEventListener('click', () => {
+            const result = Math.floor(Math.random() * sides) + 1;
+            dice.textContent = result;
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sorteador de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteador de Números</h1>
+    <p>Número Sorteado:</p>
+    <p id="numeroSorteado">-</p>
+    <button id="sortear">Sortear</button>
+
+    <script>
+        const numeroSorteadoElement = document.getElementById('numeroSorteado');
+        const sortearButton = document.getElementById('sortear');
+
+        sortearButton.addEventListener('click', () => {
+            const numeroSorteado = Math.floor(Math.random() * 20) + 1;
+            numeroSorteadoElement.textContent = numeroSorteado;
+        });
+    </script>
+</body>
+</html>

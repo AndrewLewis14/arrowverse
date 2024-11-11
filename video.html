@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Unidades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Unidades</h1>
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" placeholder="Insira o valor" />
+        <select id="unidadeOrigem">
+            <option value="milhas">Milhas</option>
+            <option value="jardas">Jardas</option>
+            <option value="polegadas">Polegadas</option>
+            <option value="calcado">Tamanho do Calçado</option>
+            <option value="pes">Pés</option>
+            <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        <button onclick="converter()">Converter</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function converter() {
+            const valor = parseFloat(document.getElementById("valor").value);
+            const unidadeOrigem = document.getElementById("unidadeOrigem").value;
+            let resultado = 0;
+
+            switch (unidadeOrigem) {
+                case "milhas":
+                    resultado = valor * 1.60934; // 1 milha = 1.60934 quilômetros
+                    break;
+                case "jardas":
+                    resultado = valor * 0.9144; // 1 jarda = 0.9144 metros
+                    break;
+                case "polegadas":
+                    resultado = valor * 2.54; // 1 polegada = 2.54 centímetros
+                    break;
+                case "calcado":
+                    resultado = valor * 2.54; // Assume-se que o tamanho do calçado está em polegadas
+                    break;
+                case "pes":
+                    resultado = valor * 30.48; // 1 pé = 30.48 centímetros
+                    break;
+                case "fahrenheit":
+                    resultado = (valor - 32) * 5 / 9; // Fórmula de conversão de Fahrenheit para Celsius
+                    break;
+                default:
+                    resultado = "Unidade de origem inválida";
+            }
+
+            document.getElementById("resultado").textContent = `Resultado: ${resultado.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+P></P>
+        <a class="learn-more" href="saiba_mais.html">Saiba Mais</a>
+    </section>
+</body>
+</html>
+
+
+flex-wrap: 

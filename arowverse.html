@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .poll-container {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .poll-question {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .poll-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .poll-option {
+      margin: 8px;
+    }
+
+    .vote-button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .result {
+      margin-top: 20px;
+    }
+  </style>
+  <title>Enquete de Votação</title>
+</head>
+<body>
+
+<div class="poll-container">
+  <div class="poll-question">Qual é a sua opção favorita?</div>
+
+  <div class="poll-options">
+    <div class="poll-option">
+      <input type="radio" name="option" value="option1" id="option1">
+      <label for="option1">Opção 1</label>
+    </div>
+
+    <div class="poll-option">
+      <input type="radio" name="option" value="option2" id="option2">
+      <label for="option2">Opção 2</label>
+    </div>
+
+    <div class="poll-option">
+      <input type="radio" name="option" value="option3" id="option3">
+      <label for="option3">Opção 3</label>
+    </div>
+  </div>
+
+  <button class="vote-button" onclick="vote()">Votar</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function vote() {
+    var selectedOption = document.querySelector('input[name="option"]:checked');
+    if (selectedOption) {
+      alert("Você votou em: " + selectedOption.value);
+      // Aqui você pode adicionar lógica para enviar o voto para o servidor, armazenar em um banco de dados, etc.
+      showResults();
+    } else {
+      alert("Por favor, selecione uma opção antes de votar.");
+    }
+  }
+
+  function showResults() {
+    var options = document.querySelectorAll('input[name="option"]');
+    var totalVotes = 0;
+
+    options.forEach(function(option) {
+      totalVotes += option.checked ? 1 : 0;
+    });
+
+    var resultContainer = document.getElementById('result');
+    resultContainer.innerHTML = "<h2>Resultados:</h2>";
+
+    options.forEach(function(option) {
+      var percentage = (option.checked ? 100 / totalVotes : 0).toFixed(2);
+      resultContainer.innerHTML += `<p>${option.value}: ${percentage}%</p>`;
+    });
+  }
+</script>
+
+</body>
+</html>

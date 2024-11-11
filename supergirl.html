@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="esportes.js"></script>
+  <title>Meu Site de Esportes</title>
+</head>
+<body>
+  <!-- Seu conteúdo existente -->
+
+  <section class="poll-section">
+    <h2>Enquete</h2>
+    <p>Qual esporte é o seu favorito?</p>
+    <form id="pollForm">
+      <label>
+        <input type="radio" name="sport" value="f1"> Fórmula 1
+      </label>
+      <label>
+        <input type="radio" name="sport" value="football"> Futebol
+      </label>
+      <label>
+        <input type="radio" name="sport" value="american-football"> Futebol Americano
+      </label>
+      <label>
+        <input type="radio" name="sport" value="basketball"> Basquete
+      </label>
+      <button type="button" onclick="submitPoll()">Votar</button>
+    </form>
+    <p id="pollResult"></p>
+  </section>
+
+  <!-- Seu conteúdo existente -->
+
+  <footer>
+    <p>&copy; 2023 Site de Esportes</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+
+c<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Notas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    #notes {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Sistema de Notas</h1>
+    <div>
+      <input type="text" id="note" placeholder="Insira uma nota">
+      <button onclick="addNote()">Adicionar Nota</button>
+    </div>
+    <div id="notes"></div>
+    <p>Média: <span id="average">0</span></p>
+  </div>
+
+  <script>
+    const notes = [];
+    const notesContainer = document.getElementById("notes");
+    const averageSpan = document.getElementById("average");
+
+    function addNote() {
+      const noteInput = document.getElementById("note");
+      const noteValue = parseFloat(noteInput.value);
+      if (!isNaN(noteValue)) {
+        notes.push(noteValue);
+        const noteItem = document.createElement("div");
+        noteItem.textContent = `Nota: ${noteValue}`;
+        notesContainer.appendChild(noteItem);
+        noteInput.value = "";
+        calculateAverage();
+      }
+    }
+
+    function calculateAverage() {
+      const sum = notes.reduce((total, note) => total + note, 0);
+      const average = sum / notes.length || 0;
+      averageSpan.textContent = average.toFixed(2);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Boletim</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    .subject {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Sistema de Boletim</h1>
+    <form id="gradesForm">
+      <div class="subject">
+        <label for="subject1">Matéria 1:</label>
+        <input type="number" id="subject1" min="0" max="10" step="0.01">
+      </div>
+      <!-- Repita este bloco para as outras matérias (2 a 10) -->
+      <!-- Exemplo para Matéria 2: -->
+      <div class="subject">
+        <label for="subject2">Matéria 2:</label>
+        <input type="number" id="subject2" min="0" max="10" step="0.01">
+      </div>
+      <!-- Até Matéria 10 -->
+      <button type="button" onclick="calculateAverage()">Calcular Média</button>
+    </form>
+    <p>Média: <span id="average">0</span></p>
+  </div>
+
+  <script>
+    function calculateAverage() {
+      const totalSubjects = 10;
+      let sum = 0;
+      for (let i = 1; i <= totalSubjects; i++) {
+        const input = document.getElementById(`subject${i}`);
+        const value = parseFloat(input.value);
+        if (!isNaN(value)) {
+          sum += value;
+        }
+      }
+      const average = sum / totalSubjects || 0;
+      document.getElementById("average").textContent = average.toFixed(2);
+    }
+  </script>
+</body>
+</html>
